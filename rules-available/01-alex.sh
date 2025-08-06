@@ -47,8 +47,6 @@ $FW -A $rulename -i $DEV_LAN1 -o $DEV_LAN1 -s 10.10.10.61 -p udp -m multiport --
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_LAN1 -s 10.10.10.61 -p tcp -m multiport --dport 53 -j ACCEPT            ## DNS TCP
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.61 -p ICMP -j ACCEPT            ## ICMP
 
-$FW -A $rulename -i $DEV_LAN1 -o $DEV_DMZ1 -s 10.10.10.61 -p tcp -m multiport --dport 80,443 -j ACCEPT            ## HTTP/S
-
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.50 -j ACCEPT		## Alex PC1
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.50 -d $DNS_INTERN1 -j ACCEPT		## Alex PC1
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.50 -d $DNS_INTERN2 -j ACCEPT		## Alex PC1
@@ -72,19 +70,10 @@ $FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.11 -d $DNS1 -p udp -m m
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.11 -d $DNS2 -p udp -m multiport --dport 53 -j ACCEPT            ## DNS2
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.11 -d $DNS3 -p udp -m multiport --dport 53 -j ACCEPT            ## DNS2
 
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS1 -p tcp -m multiport --dport 53 -j ACCEPT            ## DNS3
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS2 -p tcp -m multiport --dport 53 -j ACCEPT            ## DNS3
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS3 -p tcp -m multiport --dport 53 -j ACCEPT            ## DNS3
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS1 -p udp -m multiport --dport 53 -j ACCEPT            ## DNS3
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS2 -p udp -m multiport --dport 53 -j ACCEPT            ## DNS3
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -d $DNS3 -p udp -m multiport --dport 53 -j ACCEPT            ## DNS3
-
 
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.11 -p tcp -m multiport --dport 80,443 -j ACCEPT            ## eth0.asgard.home
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_EXTERN -s 10.10.10.12 -p tcp -m multiport --dport 80,443 -j ACCEPT            ## eth0.raspi.home
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.30 -d $DNS_INTERN1 -j ACCEPT            ## eth0.raspi.home
 $FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.11 -d $NET_INTERN -j ACCEPT            ## eth0.asgard.home
-#$FW -A $rulename -i $DEV_LAN1 -o $DEV_INTERN -s 10.10.10.12 -d $NET_INTERN -j ACCEPT            ## eth0.raspi.home
+
 
 
 

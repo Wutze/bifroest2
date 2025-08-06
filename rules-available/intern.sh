@@ -52,36 +52,6 @@ $FW -A $rulename -i $DEV_INTERN -o $DEV_LAN1 -p udp -m multiport --dport 53 -j A
 
 $FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -p udp -m multiport --dport 123 -j DROP		##
 
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.100 -p tcp -m multiport --dport 80,443 -j ACCEPT	## GabiPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.100 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.100 -p tcp -m multiport --dport 53 -j ACCEPT		##
 
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.101 -p tcp -m multiport --dport 53,80,443,1935,8080,64738 -j ACCEPT	## MicroPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.101 -p udp -m multiport --dport 53 -j ACCEPT		## dns
-$FW -A $rulename -i $DEV_INTERN -o $DEV_DMZ1 -s 192.168.104.101 -d 172.16.16.57 -j ACCEPT		## pbx
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.101 -p udp -m multiport --dport 1194 -j ACCEPT	## vpn von innen aufbauen lassen
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.102 -p tcp -m multiport --dport 80,443 -j ACCEPT	## AlexPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.102 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.102 -p tcp -m multiport --dport 53 -j ACCEPT		##
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.103 -p tcp -m multiport --dport 80,443 -j ACCEPT	## InaPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.103 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.103 -p tcp -m multiport --dport 53 -j ACCEPT		##
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.105 -p tcp -m multiport --dport 80,443 -j ACCEPT	## Medion Pad
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.105 -p udp -m multiport --dport 53,80,443,123 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.105 -p tcp -m multiport --dport 53,80,443,123 -j ACCEPT		##
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.106 -p tcp -m multiport --dport 80,443,1935 -j ACCEPT	## Monster Notebook
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.106 -p udp -m multiport --dport 53,80,443,123 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.106 -p tcp -m multiport --dport 53,80,443,123 -j ACCEPT		##
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.107 -p tcp -m multiport --dport 80,443 -j ACCEPT	## YazanPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.107 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.107 -p tcp -m multiport --dport 53 -j ACCEPT		##
-
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.108 -p tcp -m multiport --dport 80,443,993 -j ACCEPT	## mail.home 
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.108 -p udp -m multiport --dport 11335 -j ACCEPT	## mail.home rspamd 
 
 ########################################################

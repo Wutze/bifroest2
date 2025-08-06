@@ -39,21 +39,11 @@ current_object_d[$count]="0.0.0.0/0"
 ########################################################
 
 ####### VPN Zugriffe
-#$FW -A $rulename -s $PRIVATE_VPN1 -o $DEV_DMZ1 -j ACCEPT		## -> pbx.home
-#$FW -A $rulename -s $PRIVATE_VPN1 -o $DEV_LAN1 -j ACCEPT		##
-####$FW -A $rulename -i $DEV_INTERN -o $DEV_DMZ1 -s 192.168.104.108 -j ACCEPT		##
-####$FW -A $rulename -i $DEV_INTERN -o $DEV_LAN1 -s 192.168.104.108 -j ACCEPT		##
-####$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.108 -j ACCEPT		##
 $FW -A $rulename -i $DEV_INTERN -d $NET_VPN0 -j ACCEPT		##
 $FW -A $rulename -o $DEV_EXTERN -s $NET_VPN0 -j ACCEPT		##
 
-#$FW -t nat -I PREROUTING -p udp -i $DEV_EXTERN --dport 1194 -j DNAT --to 192.168.104.108	##
-#$FW -t nat -I PREROUTING -p udp -i $DEV_INTERN --dport 1194 -j DNAT --to 192.168.104.108	##
-#$FW -I FORWARD -i $DEV_EXTERN -d 192.168.104.108 -j ACCEPT
-
 $FW -A $rulename -s $NET_VPN0 -o $DEV_DMZ1 -j ACCEPT
 $FW -A $rulename -s $NET_VPN0 -o $DEV_LAN1 -j ACCEPT
-#$FW -A $rulename -s $NET_VPN0 -o $DEV_EXTERN -j ACCEPT
 
 ## VPN DMZ - läuft
 $FW -t nat -I PREROUTING -p udp -i $DEV_EXTERN --dport 1194 -j DNAT --to 172.16.16.108	##

@@ -57,16 +57,6 @@ $FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.140 -p tcp -m mult
 $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.140 -p udp -m multiport --dport 53 -j ACCEPT		##
 $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.140 -p tcp -m multiport --dport 53 -j ACCEPT		##
 
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.147 -p tcp -m multiport --dport 80,443 -j ACCEPT	## PetraNotebook
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.147 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.147 -p tcp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.148 -p tcp -m multiport --dport 80,443 -j ACCEPT	## PetraNotebook
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.148 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.148 -p tcp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.149 -p tcp -m multiport --dport 80,443 -j ACCEPT	## PetraNotebook
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.149 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.149 -p tcp -m multiport --dport 53 -j ACCEPT		##
-
 ## Ports 4244,5222,5223,5228 für Whatsapp
 $FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.150 -p tcp -m multiport --dport 80,443,4244,5222,5223,5224,5228 -j ACCEPT	## JanPhone
 $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.150 -p udp -m multiport --dport 53 -j ACCEPT		##
@@ -74,7 +64,3 @@ $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.150 -p tcp -m mult
 $FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.151 -p tcp -m multiport --dport 80,443,993,4244,5222,5223,5228 -j ACCEPT	## AndiPhone
 $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.151 -p udp -m multiport --dport 53 -j ACCEPT		##
 $FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.151 -p tcp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_EXTERN -s 192.168.104.152 -p tcp -m multiport --dport 80,443,4244,5222,5223,5224,5228 -j ACCEPT	## JanPhone
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.152 -p udp -m multiport --dport 53 -j ACCEPT		##
-$FW -A $rulename -i $DEV_INTERN -o $DEV_INTERN -s 192.168.104.152 -p tcp -m multiport --dport 53 -j ACCEPT		##
-
