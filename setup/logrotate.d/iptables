@@ -1,0 +1,14 @@
+## Script nach /etc/logrotate.d/iptables
+
+/var/log/iptables.log {
+        monthly
+        rotate 12
+        compress
+        delaycompress
+        missingok
+        notifempty
+        create 644 root root
+        postrotate
+                /bin/systemctl kill -s HUP rsyslog.service
+        endscript
+}

@@ -1,0 +1,25 @@
+[Unit]
+Description=Firewall Log to InfluxDB
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/php /usr/local/bin/firewall_influx.php
+Restart=always
+RestartSec=5
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
+/etc/systemd/system/firewall-influx.service
+
+
+systemctl daemon-reexec
+systemctl daemon-reload
+systemctl enable --now firewall-influx.service
+
+
+systemctl status firewall-influx.service
+journalctl -u firewall-influx.service -
