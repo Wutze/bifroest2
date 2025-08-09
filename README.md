@@ -1,5 +1,7 @@
 # 🛡️ bifroest – Ein modulares Firewall-Skript für iptables
 
+* 🇬🇧  [English Translation](doc/EN/readme.md)
+
 `bifroest2` ist ein robustes, einfach verständliches und modular aufgebautes Firewall-Framework auf Basis von `iptables`. Es richtet sich an Admins und Power-User, die klare, nachvollziehbare Regeln für IPv4-Netzwerke brauchen – ohne Blackbox und ohne komplexe Tools wie `firewalld` oder `nftables`. "What You See Is What You Get" - WYSIWYG - ohne zusätzlichen kunterbunten Schnick-Schnack, also einfach Firewall. ;o)
 
 Ich habe das Script inzwischen seit 2006 in Verwendung, auf den verschiedensten Systemen und bei vielen Firmen, mit vielen Administratoren. Bisher hat sich jeder in den Aufbau und die Funktionsweise problemlos einarbeiten können, da alle Firewallregeln übersichtlich gestaltet sind und von nichts ablenken. Es ist eindeutig zu sehen, welche Regel welche Aufgaben zu erfüllen hat. Es ist einfach nur eine Firewall, ohne jede Ablenkung vom wesentlichen.
@@ -31,6 +33,9 @@ Ich habe das Script inzwischen seit 2006 in Verwendung, auf den verschiedensten 
 ├── rules-enabled/
 │   ├── 01-alex.sh    # Regel für Alex’ Geräte
 │   ├── 02-iot.sh     # Regel für IoT-Netz
+│   ├── 98-input.sh   # main rule
+│   ├── 99-output.sh  # main rule
+│   ├── 99-spezial.sh # main rule
 │   └── ...           # Weitere objektbasierte Regeldateien
 ├── firewall.sh       # Startet den gesamten Regelaufbau
 └── README.md
@@ -246,7 +251,7 @@ Im Ordner snippets:
 
 ![Grafana Beispiel](doc/grafana.png)
 
-![Firewalllog mit Multitaila Beispiel](doc/firewalllog_multitail.png)
+![Firewalllog mit Multitail Beispiel](doc/firewalllog_multitail.png)
 
 ## Wünsche/Zukunft
 

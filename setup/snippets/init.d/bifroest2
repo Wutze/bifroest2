@@ -1,12 +1,12 @@
 #!/bin/sh -e
 ### BEGIN INIT INFO
-# Provides:          microwall
+# Provides:          bifroest2
 # Required-Start:    $local_fs $network
 # Required-Stop:
 # Default-Start:     S
 # Default-Stop:
-# Short-Description: microwall
-# Description:       microwall - extended firewall script
+# Short-Description: bifroest2
+# Description:       bifroest2 - extended firewall script
 ### END INIT INFO
 
 case "$1" in

@@ -23,7 +23,7 @@
 # Description: bifroest2 - extended and modular firewallscript for iptables
 ### END INIT INFO
 
-cd /opt/firewall
+cd /opt/firewall || exit
 
 ## Debug your Script
 ## Start this Script with: DEBUG=1 ./firewall.sh [Options]
@@ -122,7 +122,7 @@ start_fw() {
 	source <(cat rules-enabled/*.sh) >&2
 
 	# Konfiguration Firewall abschließen und alle Regeln in die Tabellen eintragen
-	# Routungs aktivieren, Forwarding, Masquerade usw.
+	# Routing aktivieren, Forwarding, Masquerade usw.
 	# Wichtig!
 	# In den einzelnen eigenen Transport-Regeln müssen diese beiden Zeilen vorhanden sein
 	# count=$(( $count + 1 ))
