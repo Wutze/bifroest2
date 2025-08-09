@@ -249,9 +249,9 @@ In the snippets folder:
 
 ## Images
 
-![Grafana example](doc/grafana.png)
+![Grafana example](./doc/grafana.png)
 
-![Firewall log with Multitail example](doc/firewalllog_multitail.png)
+![Firewall log with Multitail example](./doc/firewalllog_multitail.png)
 
 ## Wishes/Future
 
