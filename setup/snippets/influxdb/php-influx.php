@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Datei zum testen, funktioniert nur mit Debian 11
+ * für Debian 12 musst du nur das Regex neu aufbauen, dann sollte auch das Script funktionieren
+ */
+
 $logfile = '/var/log/iptables.log';
 //$logfile = '/var/log/testlog.log';
 
