@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Version für Debian 11
+ */
+
+
 $logfile = '/var/log/iptables.log';
 $bucket = 'iptables';
 $org = 'xVPN';
