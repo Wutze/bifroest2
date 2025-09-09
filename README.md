@@ -245,7 +245,7 @@ Im Ordner snippets:
 
 2. Ein Start/Stop-Script für ``` /etc/init.d/ ```, einfach da hinein kopieren. Fertig
 
-3. Das Firewallscript wurde um eine weitere Funktion ergänzt. Du kannst nun das Firewall-Log in eine influxdb2 schreiben lassen, um damit den Verkehr auf dem Router sichtbar machen zu können. Mehr erfährst du dann [hier](snippets/influxdb/readme.md).
+3. Das Firewallscript wurde um eine weitere Funktion ergänzt. Du kannst nun das Firewall-Log in eine influxdb2 schreiben lassen, um damit den Verkehr auf dem Router sichtbar machen zu können. Mehr erfährst du dann [hier](setup/snippets/influxdb/readme.md).
 
 ## Bilder
 
